@@ -33,8 +33,7 @@ def get_jobs(title, location , num_jobs, slp_time , verbose, folder_name):
     time.sleep(3)
     job_title.send_keys(title)
     job_location.send_keys(location)
-    job_location.send_keys(Keys.ENTER)
-    
+    job_location.send_keys(Keys.ENTER)    
         
     jobs = []
     count = 0  
@@ -151,7 +150,7 @@ folder_name = folder_name.replace(" ","")
 df = get_jobs(title,location, num_jobs , slp_time , verbose , folder_name)
 
 # Save data
-df.to_csv('glassdoor_jobs4.csv' , index=False)
+df.to_csv(folder_name+'.csv' , index=False)
 
 # If use json then uncomment
 # To load json files into DataFrame
@@ -165,5 +164,5 @@ df.to_csv('glassdoor_jobs4.csv' , index=False)
 #         d = json.load(f )
 #         job_list.append(d)
 # df = pd.DataFrame.from_dict(job_list, orient='columns')
-# df.to_csv('glassdoor_jobs.csv' , index=False)
+# df.to_csv(folder_name+'.csv' , index=False)
 # =============================================================================
